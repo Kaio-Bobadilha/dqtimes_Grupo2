@@ -15,7 +15,7 @@ mod tests {
 */
 
 mod data;
-mod algorithms;
+mod scripts;
 mod metrics;
 mod preprocessing;
 
