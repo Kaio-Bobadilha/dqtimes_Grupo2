@@ -1,44 +1,18 @@
-// Implementação de um algoritmo
-// Importa o Trait que este módulo deve implementar
-use super::Predictor; 
+use forecast_crate::{TimeSeries, PredictionParams, predict_linear_regression};
+use std::env;
 
-// Importa tipos da raiz do crate
-use crate::data::Dataset;
-use crate::error::PredictionError;
 
-// A estrutura que guardara o estado do modelo
-pub struct LinearRegression {
-    coefficients: Option<Vec<f64>>,
-}
+fn main() {
+let args: Vec<String> = env::args().collect();
+let path = args.get(1).map(|s| s.as_str()).unwrap_or("data/teste.txt");
+let horizon = args.get(2).and_then(|s| s.parse::<usize>().ok()).unwrap_or(3);
 
-impl LinearRegression {
-    pub fn new() -> Self {
-        Self { coefficients: None }
-    }
-}
 
-// Implementação da "interface" Predictor para LinearRegression
-impl Predictor for LinearRegression {
-    
-    fn train(&mut self, data: &Dataset) -> Result<(), PredictionError> {
-        //Implementar a lógica de treinamento aqui
-        println!("(Placeholder) Treinando Regressão Linear...");
-
-        // Simulação de cálculo de coeficientes
-        self.coefficients = Some(vec![0.5, 1.2]); // EX
-        Ok(())
-    }
-
-    fn predict(&self, inputs: &Dataset) -> Result<Vec<f64>, PredictionError> {
-        // Verificar se o modelo foi treinado
-        if self.coefficients.is_none() {
-            return Err(PredictionError::ModelNotTrained);
-        }
-        
-        println!("(Placeholder) Realizando previsão...");
-
-        // Retorna um vetor de predições (exemplo)
-        let predictions = vec![0.0; inputs.features.len()];
-        Ok(predictions)
-    }
+let content = std::fs::read_to_string(path).expect("cannot read file");
+let values: Vec<f64> = content.lines().filter_map(|l| l.trim().parse().ok()).collect();
+let ts = TimeSeries { values, timestamps: None };
+let params = PredictionParams { horizon, ..Default::default() };
+let res = predict_linear_regression(&ts, &params);
+println!("Forecast: {:?}
+Meta: {:?}", res.forecast, res.meta);
 }

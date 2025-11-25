@@ -1,44 +1,42 @@
-// Implementação de um algoritmo
-// Importa o Trait que este módulo deve implementar
-use super::Predictor; 
+// Arquivo: src/algorithms/linear_regression.rs
+//! Implementação simples de regressão linear usando mínimos quadrados
 
-// Importa tipos da raiz do crate
-use crate::data::Dataset;
-use crate::error::PredictionError;
 
-// A estrutura que guardara o estado do modelo
-pub struct LinearRegression {
-    coefficients: Option<Vec<f64>>,
+pub fn fit_linear_regression(x: &[f64], y: &[f64]) -> Option<(f64, f64)> {
+if x.len() != y.len() || x.is_empty() {
+return None;
+}
+let n = x.len() as f64;
+let sum_x: f64 = x.iter().sum();
+let sum_y: f64 = y.iter().sum();
+let sum_xy: f64 = x.iter().zip(y.iter()).map(|(a,b)| a*b).sum();
+let sum_x2: f64 = x.iter().map(|v| v*v).sum();
+
+
+let denom = n * sum_x2 - sum_x * sum_x;
+if denom.abs() < 1e-12 {
+return None;
+}
+let slope = (n * sum_xy - sum_x * sum_y) / denom;
+let intercept = (sum_y - slope * sum_x) / n;
+Some((slope, intercept))
 }
 
-impl LinearRegression {
-    pub fn new() -> Self {
-        Self { coefficients: None }
-    }
+
+pub fn predict_from_linear(slope: f64, intercept: f64, x: f64) -> f64 {
+slope * x + intercept
 }
+```
 
-// Implementação da "interface" Predictor para LinearRegression
-impl Predictor for LinearRegression {
-    
-    fn train(&mut self, data: &Dataset) -> Result<(), PredictionError> {
-        //Implementar a lógica de treinamento aqui
-        println!("(Placeholder) Treinando Regressão Linear...");
 
-        // Simulação de cálculo de coeficientes
-        self.coefficients = Some(vec![0.5, 1.2]); // EX
-        Ok(())
-    }
+---
 
-    fn predict(&self, inputs: &Dataset) -> Result<Vec<f64>, PredictionError> {
-        // Verificar se o modelo foi treinado
-        if self.coefficients.is_none() {
-            return Err(PredictionError::ModelNotTrained);
-        }
-        
-        println!("(Placeholder) Realizando previsão...");
 
-        // Retorna um vetor de predições (exemplo)
-        let predictions = vec![0.0; inputs.features.len()];
-        Ok(predictions)
-    }
-}
+### 5) `src/algorithms/mod.rs`
+
+
+```rust
+pub mod linear_regression;
+
+
+pub use linear_regression::*;

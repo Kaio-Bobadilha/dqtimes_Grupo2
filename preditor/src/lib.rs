@@ -1,26 +1,22 @@
-/*pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
-*/
-
-mod data;
-mod scripts;
-mod metrics;
-mod preprocessing;
-
+pub mod prediction;
 pub mod algorithms;
+pub mod error;
+pub mod data;
+pub mod metrics;
+pub mod preprocessing;
+pub mod scripts;
 
-pub use error::PreditorError;
-pub use data::Dataset;
 
+// Re-exportações públicas úteis
+pub use prediction::{TimeSeries, PredictionParams, ForecastResult, PredictiveModel};
+```
+
+
+---
+
+
+### 3) `src/prediction.rs`
+
+
+```rust
+// A
