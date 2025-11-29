@@ -1,0 +1,14 @@
+C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\deps\serde-6ab0cb735a1bc782.d: C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\build\serde-291d5c27960f80df\out/private.rs
+
+C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\deps\libserde-6ab0cb735a1bc782.rlib: C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\build\serde-291d5c27960f80df\out/private.rs
+
+C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\deps\libserde-6ab0cb735a1bc782.rmeta: C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\build\serde-291d5c27960f80df\out/private.rs
+
+C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\note0\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+C:\Users\note0\Desktop\Facul\dqtimes_Grupo2\preditor\target\debug\build\serde-291d5c27960f80df\out/private.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\note0\\Desktop\\Facul\\dqtimes_Grupo2\\preditor\\target\\debug\\build\\serde-291d5c27960f80df\\out
